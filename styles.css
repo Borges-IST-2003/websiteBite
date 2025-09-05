@@ -517,7 +517,6 @@ nav#navbar a {
   word-spacing: 0.4vw;   /* Space out words */;
   font-size: 1.25vw;         /* Responsive paragraph size */
   line-height: 1.6;          /* Improved readability */
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -528,14 +527,18 @@ nav#navbar a {
 
 .faqs h3 {
   font-size: 5vw;
-  font-style: italic;
-  font-family: "Alfa Slab One", cursive;
-  letter-spacing: 3px; /* Space out letters */
-  word-spacing: 6px;   /* Space out words */;
+  font-family: "Climate Crisis";
   font-weight: 700;
   text-decoration: underline;
   margin-bottom: 3vw;
+  
+  /* Correct way to apply gradient to text */
+  background: linear-gradient(0deg, #8e038e 0%, #6a03a2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
 
 @media only screen and (max-width: 768px) {
   .faqs h3{
@@ -564,7 +567,7 @@ font-weight: bold;
 font-weight: 700;
 font-style: italic;
 font-size: 1.5vw;
-color: #FFF;
+color: #7803a6;
 border: 3px solid transparent;
 border-radius: 40px;
 padding: right;
@@ -574,20 +577,20 @@ position: relative;
 
 #b1, #b6, #b9, #b12, #b15 {
 background: 
-linear-gradient(#1F1E1E,#1F1E1E) padding-box,
+linear-gradient(#06010e,#06010e) padding-box,
 linear-gradient(60deg, rgb(205, 6, 215), #0015ff) border-box;
 }
 
 
 #b3, #b5, #b7, #b11, #b14 {
 background: 
-linear-gradient(#1F1E1E,#1F1E1E) padding-box,
+linear-gradient(#06010e,#06010e) padding-box,
 linear-gradient(60deg, rgb(50, 202, 20), #00e8ff) border-box;
 }
 
 #b2, #b4, #b8, #b10, #b13, #b16 {
 background: 
-linear-gradient(#1F1E1E,#1F1E1E) padding-box,
+linear-gradient(#06010e,#06010e) padding-box,
 linear-gradient(60deg,#f519d4,#ffe202) border-box;
 }
 
@@ -666,6 +669,11 @@ display: block;
   font-weight: 700;
   text-decoration: underline;
   margin-top: 5vw;
+
+  background: linear-gradient(0deg, #8e038e 0%, #6a03a2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Grid Container for Supporter Logos */
@@ -700,16 +708,6 @@ display: block;
   object-fit: contain; /* Ensures images fit within bounds while maintaining aspect ratio */
   display: block;
 }
-
-/* Remove individual image styling that might conflict */
-#ipdj, #fcul, #ist, #cgd {
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  scale: 1 !important; /* Reset any scaling */
-}
-
 /* Responsive Design */
 @media only screen and (max-width: 1024px) {
   #supporter-logos {
@@ -762,6 +760,11 @@ display: block;
   text-decoration: underline;
   margin-top: 15vw;
   margin-bottom: 5vw;
+
+  background: linear-gradient(0deg, #8e038e 0%, #6a03a2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ==================== Carousel Styles ==================== */
@@ -855,10 +858,9 @@ display: flex;
 }
 
 .contact-text h3 {
-font-family: "Climate Crisis", cursive;
-  letter-spacing: 3px; /* Space out letters */
-  word-spacing: 6px;   /* Space out words */;
-font-style: italic;
+font-family: "Jetbrains mono";
+font-size: 1.3vw;
+color: #7505ad;
 font-weight: 700;
 margin: -5px;
 }
@@ -866,9 +868,9 @@ margin: -5px;
 .contact-text p {
 display: flex;
 align-items: center;
-font-family: "Climate Crisis", cursive;
-  letter-spacing: 3px; /* Space out letters */
-  word-spacing: 6px;   /* Space out words */;
+font-family: "Jetbrains mono";;
+color: #7505ad;
+font-size: 1.3vw;
 font-style: italic;
 font-weight: 700;
 margin: -5px;
@@ -888,14 +890,14 @@ margin-bottom: -20%;
 hr {
 margin: 20px 0;
 border: none;
-border-top: 1px solid #ffffff; 
+border-top: 1px solid #6a03a2; 
 }
 
 .rights {
 margin: 0; 
-font-family: "Climate Crisis", cursive;
-  letter-spacing: 3px; /* Space out letters */
-  word-spacing: 6px;   /* Space out words */;
+font-family: "Jetbrains mono";;
+color: #7505ad;
+font-size: 1.3vw;
 font-style: italic;
 font-weight: 700;
 flex: 1; 
