@@ -1,0 +1,1015 @@
+/* Basic Reset and Styling */
+body {
+    position: relative;
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Climate Crisis';
+    color: #fff;
+    letter-spacing: 0.1vw;
+    margin: 0;          /* Remove default margin */
+    padding: 0;         /* Remove default padding */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    z-index: -1;
+}
+
+main {
+    margin-top: 10vw; /* Same as navbar height */
+    padding: 0;        /* Remove padding to stick to edges */
+}
+
+nav#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6vw; /* Set navbar height to 10vw */
+    background: #030236;
+    color: #b400b4;
+    font-family: "Climate Crisis", sans-serif;
+    z-index: 1000;
+    transition: top 0.3s, height 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vw; /* Horizontal padding relative to viewport width */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+nav#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2vw; /* use relative gap */
+    margin-right: 1vw; /* reduced margin for flexibility */
+    font-size: 1vw; /* responsive font size for nav links */
+}
+
+nav#navbar li {
+    margin: 0;
+}
+
+nav#navbar a {
+    color: #bb13b6;
+    text-decoration: none;
+    padding: 1vw 1vw 1vw 0;
+    display: block;
+    font-size: inherit; /* inherit responsive font size */
+}
+
+#logo {
+    height: 80%; /* 80% of navbar height */
+    width: auto; /* maintain aspect ratio */
+    transition: height 0.3s;
+}
+
+/* Responsive tweaks with media queries for smaller screens */
+@media (max-width: 768px) {
+    nav#navbar {
+        height: 6vw; /* slightly bigger height for smaller devices */
+    }
+    nav#navbar ul {
+        gap: 1.5vw;
+        font-size: 2vw; /* larger font for readability */
+        margin-right: 1vw;
+    }
+    #logo {
+        height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav#navbar {
+        height: 6vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5vw 1vw;
+        gap: 0.5vw;
+    }
+    nav#navbar ul {
+        gap: 1vw;
+        font-size: 3vw;
+        margin: 0;
+    }
+    #logo {
+        height: 60%;
+        margin-bottom: 0.5vw;
+    }
+}
+
+
+
+.logo-stack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;  /* Change from center to flex-start */
+    gap: 2vw;
+    width: 100vw;                 /* Full viewport width */
+    position: relative;
+}
+
+.logo-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;           /* Position absolutely */
+    left: 50%;                   /* Move to center of viewport */
+    transform: translateX(-50%); /* Center the logo-images div itself */
+}
+
+.spline-animation {
+    width: 25vw;
+    height: 20vw;
+    max-width: 100%;
+    top: -5vw;
+    right: -10vw; 
+    position: relative;
+    flex-shrink: 0;              /* Prevent shrinking */
+}
+
+
+.spline-animation iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+#bitelogo1 {
+    width: 35vw;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#bitelogo2 {
+    width: 18vw;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1vh; /* Space between logos */
+    position: relative;
+    top: -15vw;
+    left: 10vw;
+    opacity: 0;
+    transition: top 1s ease, opacity 1s ease;
+}
+
+#bitelogo2.show {
+    opacity: 1;
+    top: -12.5vw;
+    left: 10vw;
+}
+
+.event-date-animation {
+    margin-top: 5vw;
+    width: 100%;
+    max-width: 100%;
+    height: 30vw;          /* Responsive height, adjust as needed */
+    min-height: 300px;     /* Optional: ensures visibility on small screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.event-date-animation iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.hands-description-container {
+    width: 100%;
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.what-is-bite-title {
+    font-family: 'Climate Crisis';
+    font-size: 6vw;
+    font-weight: bold;
+    color: #7505ad;
+    margin-bottom: 4vh;
+    line-height: 1.1;
+}
+
+.hands-container {
+    width: 100%;
+    position: relative;
+    height: 40vw;
+    margin-top: 5vh;
+    overflow: hidden;
+}
+
+/* Hand images */
+.hands-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30vw;
+    height: auto;
+    transition: transform 1s ease;
+    z-index: 2; /* Above the text */
+}
+
+#lefthand {
+    transform: translate(calc(-50% - 4.4vw), -50%);
+}
+
+#righthand {
+    transform: translate(calc(-50% + 4.4vw), -50%);
+}
+
+.hands-container.separated #lefthand {
+    transform: translate(calc(-50% - 34.5vw), -50%);
+}
+
+.hands-container.separated #righthand {
+    transform: translate(calc(-50% + 34.5vw), -50%);
+}
+
+/* Text description */
+.hands-description {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    background: linear-gradient(0deg, #8e038e 0%, #7505ad 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;              /* Max width as requested */
+    max-width: 50vw;          /* Ensure it doesn't exceed 60vw */
+    text-align: center;
+    font-size: 1.6vw;         /* Font size as requested */
+    opacity: 0;
+    z-index: 1; /* Behind the hands */
+    transition: opacity 1s ease;
+    pointer-events: none; /* Prevent text selection while hidden */
+}
+
+.hands-description.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    
+    .hands-container {
+        height: 50vw;          /* Taller container on mobile */
+    }
+    
+    .hands-container img {
+        width: 35vw;           /* Slightly larger hands on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hands-description {
+        font-size: 3vw;        /* Even larger font for very small screens */
+        width: 90vw;
+        max-width: 90vw;
+    }
+}
+
+/* Prizes Section Styling (kept as is) */
+#prizes {
+    margin-top: 5vw;
+    text-align: center;
+    padding: 5vh 2vw;
+    color: #8e038e;
+}
+
+#prizes .prizes-container {
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+#prizes h2 {
+    font-family: "Climate Crisis";
+    letter-spacing: 3px;
+    word-spacing: 6px;
+    font-size: 2.5vw;
+    margin-bottom: 2vh;
+}
+
+#prizes p {
+    background: linear-gradient(0deg, #d604d6 0%, #8e038e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    font-size: 1.6vw;
+}
+
+
+/*-------------------Survival Regulations----------------*/
+
+/* Responsive Container for the Spline3D Animation */
+#wave-animation-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (adjust as needed) */
+  overflow: hidden;
+}
+
+#wave-animation-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#survival-regulations {
+  align-content: center;
+  text-align: center;
+  height: 40vw;
+  max-width: 100vw;
+  position: relative;
+}
+
+
+#survival-regulations p {
+  color: #FFF;
+  justify-content: center;
+  position: relative;
+  font-family: "Climate Crisis";
+  letter-spacing: 3px; /* Space out letters */
+  word-spacing: 6px;   /* Space out words */;
+  font-size: 1.25vw;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+#survival-regulations p {
+  padding-inline: 5%;
+  margin-bottom: 2vw;
+}
+}
+
+/*----------------TIMELINE------------------*/
+
+/* --- Container to prevent conflicts --- */
+#timeline-container {
+  font-family: 'Climate Crisis';
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 10vh;
+}
+
+/* --- Timeline Wrapper --- */
+#timeline-container .timeline {
+  position: relative;
+  min-height: 10vh;
+}
+
+/* --- Timeline Title --- */
+#timeline-container .timeline-title {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #b400b4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- Central Vertical Line (with moving beads) --- */
+#timeline-container .timeline__line {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - 1px); /* Center the timeline */
+  width: 2px;
+  top: -50px;
+  bottom: -50px;
+  background: linear-gradient(to bottom, #b400b4, #4B0082);
+  display: block;
+  z-index: -1;
+}
+
+/* --- Top and Bottom Beads (balls) on the line --- */
+#timeline-container .timeline__line::before,
+#timeline-container .timeline__line::after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #000;
+  left: calc(50% - 0.5rem); /* Fixed alignment - use same method as line */
+}
+
+/* Top bead stays at the very top */
+#timeline-container .timeline__line::before {
+  top: 0;
+}
+
+/* Bottom bead can move; starts at the bottom */
+#timeline-container .timeline__line::after {
+  bottom: 0;
+}
+
+/* --- Each Timeline Section (Event) --- */
+#timeline-container .timeline__section {
+  /* Basic positioning & animation */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  opacity: 0;                  /* Hidden by default */
+  transform: translateX(-100%); 
+  transition: opacity 600ms ease, transform 600ms ease;
+  margin: 50px 0; 
+  padding: 1rem;
+  min-height: 300px;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+/* --- Bead within each section --- */
+#timeline-container .timeline__section__bead {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #000;
+  left: calc(50% - 1.5rem); /* Fixed alignment - consistent with line and other beads */
+  top: 45%;
+  z-index: 3;
+}
+
+/* --- Content Area (Text) --- */
+#timeline-container .timeline__section__content {
+  max-width: 40%;    /* Restrict width so text is near the timeline */
+  margin: 0 2rem;    /* A bit of horizontal spacing around text */
+}
+
+.timeline__section__content h2 {
+  font-family: 'Climate Crisis';
+  font-weight:bolder;
+  font-size: 1.8vw;
+  color: #7505ad;
+}
+
+
+.timeline__section__content p {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  font-size: 1.6vw;
+  color:#8e038e;
+}
+
+.timeline__section:nth-child(odd) {
+  /* This side is from the right */
+  transform: translateX(100%);
+  justify-content: flex-start;
+}
+
+.timeline__section:nth-child(even) {
+  /* This side is from the left */
+  transform: translateX(-100%);
+  justify-content: flex-end;
+}
+
+/* Reveal sections when they enter the viewport */
+#timeline-container .show-me {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+/*---------------------------FAQS-----------------*/
+
+.faqs {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 0.05vw; /* Space out letters */
+  word-spacing: 0.4vw;   /* Space out words */;
+  font-size: 1.25vw;         /* Responsive paragraph size */
+  line-height: 1.6;          /* Improved readability */
+
+}
+
+@media only screen and (max-width: 768px) {
+  .faqs{
+    margin-top: 10px;
+  }
+}
+
+.faqs h3 {
+  font-size: 5vw;
+  font-style: italic;
+  font-family: "Alfa Slab One", cursive;
+  letter-spacing: 3px; /* Space out letters */
+  word-spacing: 6px;   /* Space out words */;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 3vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .faqs h3{
+    font-size: 20px;
+}
+}
+
+.buttons {
+display: flex;
+justify-content: center;
+}
+
+.coluna {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0 10px; /* Adjust the margin as needed */
+}
+
+.rounded-button {
+width: 45vw; /* Set a fixed width for all buttons */
+height: 10vh;
+margin-bottom: 10px; /* Adjust the margin between buttons as needed */
+font-family: 'JetBrains Mono', monospace;
+font-weight: bold;
+font-weight: 700;
+font-style: italic;
+font-size: 1.5vw;
+color: #FFF;
+border: 3px solid transparent;
+border-radius: 40px;
+padding: right;
+position: relative;
+
+}
+
+#b1, #b6, #b9, #b12, #b15 {
+background: 
+linear-gradient(#1F1E1E,#1F1E1E) padding-box,
+linear-gradient(60deg, rgb(205, 6, 215), #0015ff) border-box;
+}
+
+
+#b3, #b5, #b7, #b11, #b14 {
+background: 
+linear-gradient(#1F1E1E,#1F1E1E) padding-box,
+linear-gradient(60deg, rgb(50, 202, 20), #00e8ff) border-box;
+}
+
+#b2, #b4, #b8, #b10, #b13, #b16 {
+background: 
+linear-gradient(#1F1E1E,#1F1E1E) padding-box,
+linear-gradient(60deg,#f519d4,#ffe202) border-box;
+}
+
+#b1:hover, #b6:hover, #b9:hover, #b12:hover, #b15:hover{
+background: 
+linear-gradient(rgb(205, 6, 215), #0015ff) padding-box;
+}
+
+#b2:hover, #b4:hover, #b8:hover, #b10:hover, #b13:hover, #b16:hover{
+background: 
+linear-gradient(60deg,#f519d4,#ffe202) padding-box;
+}
+
+
+#b3:hover, #b5:hover, #b11:hover, #b14:hover, #b7:hover{
+background: 
+linear-gradient(60deg, rgb(50, 202, 20), #00e8ff) padding-box;
+}
+
+.rounded-button::after {
+content: '';
+position: absolute;
+top: 80%;
+right: 20px; /* Adjust the position of the arrow */
+width: 0;
+height: 0;
+border: 6px solid transparent; /* Adjust size of the arrow */
+border-top-color: rgb(255, 255, 255); /* Adjust color of the arrow */
+transform: translateY(-50%) rotate(0deg); /* Rotate and center the arrow vertically */
+}
+
+.dropdown-content {
+display: none;
+max-width: 40vw; /* Set the dropdown content width to 100% */
+font-size: 1.2vw;
+box-sizing: border-box;
+margin-bottom: 2vw;
+}
+
+.active {
+display: block;
+}
+
+@media screen and (max-width: 768px) {
+.buttons {
+    flex-direction: column; /* Change flex direction to column */
+}
+
+.coluna {
+    margin: 0; /* Remove horizontal margin */
+}
+
+.rounded-button {
+    width: 70%; /* Set buttons to full width */
+    font-size: 2.3vw;
+
+}
+
+.dropdown-content {
+  max-width: 70vw; /* Set the dropdown content width to 100% */
+  font-size: 2.5vw;
+  margin-bottom: 2vw;
+}
+
+}
+
+/*-------------------------------------------------------*/
+/* Supporters Title Styling */
+#supporters h3 {
+  text-align: center;
+  font-size: 5vw;
+  font-style: italic;
+  font-family: "Climate Crisis", cursive;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-top: 5vw;
+}
+
+/* Grid Container for Supporter Logos */
+#supporter-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 3vw; 
+  justify-items: center;
+  align-items: center;
+  margin: 4vw auto;
+  max-width: 90%;
+  padding: 0 2vw;
+}
+
+/* Supporter Item Container */
+.supporter-item {
+  width: 100%;
+  height: 15vw; /* Fixed height container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  box-sizing: border-box;
+}
+
+/* Consistent Image Sizing */
+.supporter-item img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Ensures images fit within bounds while maintaining aspect ratio */
+  display: block;
+}
+
+/* Remove individual image styling that might conflict */
+#ipdj, #fcul, #ist, #cgd {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  scale: 1 !important; /* Reset any scaling */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+  #supporter-logos {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    gap: 4vw;
+  }
+  
+  .supporter-item {
+    height: 18vw; /* Slightly larger on smaller screens */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #supporter-logos {
+    grid-template-columns: repeat(2, 1fr); /* Keep two columns on mobile */
+    gap: 5vw;
+    margin-top: 5vh;
+  }
+  
+  .supporter-item {
+    height: 20vw; /* Larger containers on mobile */
+  }
+  
+  #supporters h3 {
+    font-size: 6vw; /* Adjust title size for mobile */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #supporter-logos {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 4vw;
+  }
+  
+  .supporter-item {
+    height: 25vw;
+  }
+}
+
+
+/*--------------------MEET THE TEAM-------------------------------*/
+#core_team h3{
+  text-align: center;
+  font-size: 5vw;
+  font-style: italic;
+  font-family: "Climate Crisis", cursive;
+  letter-spacing: 3px; /* Space out letters */
+  word-spacing: 6px; /* Space out words */;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-top: 15vw;
+  margin-bottom: 5vw;
+}
+
+/* ==================== Carousel Styles ==================== */
+/* Container for the marquee */
+.marquee-container {
+  overflow: hidden; /* Hide the overflowing images */
+  position: relative;
+  width: 100vw; /* Adjust as needed */
+}
+
+/* Track that holds all marquee items */
+.marquee-track {
+  display: flex;
+  width: max-content; /* Allow the track to expand based on its content */
+  animation: marqueeAnimation 5s linear infinite;
+}
+
+/* Individual marquee items */
+.marquee-item {
+  flex: 0 0 auto;
+  margin-right: 10px; /* Adjusted margin */
+}
+
+/* Images within marquee items */
+.marquee-item img {
+  display: block;
+  width: 20vw; /* Updated width */
+  height: 20vw; /* Updated height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 8px;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Gradient Overlay - Left */
+.marquee-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px; /* Width of the gradient overlay */
+  height: 100%;
+  pointer-events: none; /* Allow interactions to pass through */
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 2; /* Ensure it's above the marquee track */
+}
+
+/* Gradient Overlay - Right */
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px; /* Width of the gradient overlay */
+  height: 100%;
+  pointer-events: none; /* Allow interactions to pass through */
+  background: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 2; /* Ensure it's above the marquee track */
+}
+
+/* Keyframes for the marquee animation */
+@keyframes marqueeAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Move left by half the total width (since we duplicated the items) */
+  }
+}
+
+/*----------------------FOOTER-----------------------------------*/
+
+
+footer {
+margin-top: 5vw;
+background-color: #1F1E1E;
+padding: 20px;
+text-align: center; 
+}
+
+.footer-section {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.contact-info {
+display: flex;
+}
+
+.contact-text h3 {
+font-family: "Climate Crisis", cursive;
+  letter-spacing: 3px; /* Space out letters */
+  word-spacing: 6px;   /* Space out words */;
+font-style: italic;
+font-weight: 700;
+margin: -5px;
+}
+
+.contact-text p {
+display: flex;
+align-items: center;
+font-family: "Climate Crisis", cursive;
+  letter-spacing: 3px; /* Space out letters */
+  word-spacing: 6px;   /* Space out words */;
+font-style: italic;
+font-weight: 700;
+margin: -5px;
+}
+
+.contact-text img {
+margin-right: 5px;
+}
+
+.social-icons img {
+width: 50px;
+height: auto;
+margin-right: 10px;
+margin-bottom: -20%;
+}
+
+hr {
+margin: 20px 0;
+border: none;
+border-top: 1px solid #ffffff; 
+}
+
+.rights {
+margin: 0; 
+font-family: "Climate Crisis", cursive;
+  letter-spacing: 3px; /* Space out letters */
+  word-spacing: 6px;   /* Space out words */;
+font-style: italic;
+font-weight: 700;
+flex: 1; 
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+footer {
+  display: none;
+}
+
+footer-m {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  display: flex; /* Use flexbox to stack divs vertically */
+  flex-direction: column; /* Stack divs vertically */
+  text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.footer-m-section h3{
+  font-size: 10px;
+}
+
+.footer-m-section p {
+  font-size: 7px;
+  margin-top: 3px;
+}
+
+#email-m {
+  width: 7px;
+  height: auto;
+}
+
+#location-m {
+  width: 7px;
+  height: auto;
+}
+
+}
+
+.rights-m {
+  font-size: 3px;
+}
+
+
+@media only screen and (min-width: 769px) {
+  footer-m {
+    display: none;
+  }
+  }
+
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* or any color you prefer */
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: #ddd; /* slightly different shade of white */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 70vh; /* adjust the height as needed */
+}
+
+.container {
+  color: #7803a6;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#countdown {
+  white-space: nowrap; /* Keep all countdown items on a single line */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 1vw; /* space between units */
+  font-family: 'Climate Crisis', cursive;
+}
+
+#countdown li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0.5vw 1vw;
+  text-transform: uppercase;
+  font-size: 3vw; /* responsive font size tied to viewport width */
+  min-width: 5vw; /* minimum width for visibility */
+  text-align: center;
+}
+
+#countdown li span {
+  display: block;
+  font-size: 5vw; /* larger font size for the number */
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  #countdown {
+    gap: 0.5vw;
+  }
+  #countdown li {
+    font-size: 4vw;
+    padding: 0.4vw 0.8vw;
+    min-width: 4vw;
+  }
+  #countdown li span {
+    font-size: 6vw;
+  }
+}
